@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#150b3a" />
+    <title>SKY RUNNER</title>
+    <meta name="description" content="3D endless runner through a floating neon city." />
+    <!-- Loader styles live here (not in styles.css) so the loader shows before any JS or CSS bundle has arrived. -->
+    <style>
+      html,body{height:100%;margin:0;background:#150b3a}
+      .boot{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;background:radial-gradient(ellipse at 50% 40%,#3a1a6e,#150b3a 70%);color:#f4f0ff;font-family:'Chakra Petch','Arial Narrow',Impact,sans-serif;text-align:center}
+      .boot-logo{margin:0;font-size:clamp(44px,12vw,68px);font-weight:700;line-height:.9;letter-spacing:.06em;text-transform:uppercase}
+      .boot-logo span{color:#ff3d8b;margin-left:.1em}
+      .boot-bar{width:min(240px,60vw);height:4px;border-radius:2px;background:rgba(255,255,255,.16);overflow:hidden}
+      .boot-bar i{display:block;height:100%;width:40%;border-radius:2px;background:linear-gradient(90deg,#3cf2ff,#ff3d8b);animation:bootslide 1.1s ease-in-out infinite}
+      .boot-txt{margin:0;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#cbb8ff}
+      @keyframes bootslide{0%{transform:translateX(-110%)}100%{transform:translateX(280%)}}
+      @media (prefers-reduced-motion:reduce){.boot-bar i{animation:none;width:100%;opacity:.7}}
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot" role="status" aria-live="polite">
+        <h1 class="boot-logo">Sky<span>Runner</span></h1>
+        <div class="boot-bar"><i></i></div>
+        <p class="boot-txt">Loading the skyline</p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
